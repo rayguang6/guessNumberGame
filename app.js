@@ -1,4 +1,3 @@
-
 let guesses = [];
 let correctNumber = getRandomNumber();
 //console.log(correctNumber);
