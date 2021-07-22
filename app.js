@@ -7,21 +7,14 @@ window.onload = function() {
     document.getElementById('number-submit').addEventListener("click",playGame);
     document.getElementById('restart-game').addEventListener("click",initGame);
 
-    //listen to enter key to submit number
-    document.getElementById('number-submit').keypress(function(event) {
-    if (event.keyCode === 13) {
-        playGame();
-    }
+    var input = document.getElementById("number-guess");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("number-submit").click();
+        }
     });
-
 }
-
-//listen to enter key to submit number
-document.getElementById('number-submit').keypress(function(event) {
-    if (event.keyCode === 13) {
-        playGame();
-    }
-});
 
 
 function playGame() {
@@ -113,3 +106,13 @@ function displayHistory() {
     list +='</ul>';
     document.getElementById('history').innerHTML = list;
 }
+
+
+function enterKeyPressed(event) {
+    if (event.keyCode == 13) {
+       alert("Enter key is pressed");
+       return true;
+    } else {
+       return false;
+    }
+ }
