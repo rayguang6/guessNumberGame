@@ -6,7 +6,23 @@ let correctNumber = getRandomNumber();
 window.onload = function() {
     document.getElementById('number-submit').addEventListener("click",playGame);
     document.getElementById('restart-game').addEventListener("click",initGame);
+
+    //listen to enter key to submit number
+    document.getElementById('number-submit').keypress(function(event) {
+    if (event.keyCode === 13) {
+        playGame();
+    }
+    });
+
 }
+
+//listen to enter key to submit number
+document.getElementById('number-submit').keypress(function(event) {
+    if (event.keyCode === 13) {
+        playGame();
+    }
+});
+
 
 function playGame() {
 
